@@ -8,11 +8,12 @@ function toggleFunction(sortID, callBackFn, inputArray) {
 function predicateFn(id, arr) {
     const finalArray = []
     for (let element of arr) {
-        if (element.id === id) {
-            element.isOn = true;
-            finalArray.push(element);
+        const newObj = { ...element }
+        if (newObj.id === id) {
+            newObj.isOn = true;
+            finalArray.push(newObj);
         } else {
-            finalArray.push(element);
+            finalArray.push(newObj);
         }
     }
     return finalArray;
