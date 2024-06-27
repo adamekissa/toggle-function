@@ -1,15 +1,20 @@
 
-function toggleFunction(sortID, inputArray) {
-    const newArray = [];
-    for (let element of inputArray) {
-        if (element.id === sortID) {
-            element.isOn = true;
-            newArray.push(element);
-        } else {
-            newArray.push(element);
-        }
-    }
-    return newArray;
+function toggleFunction(sortID, callBackFn, inputArray) {
+    const cookedArray = callBackFn(sortID, inputArray);
+    return cookedArray;
 }
 
-export { toggleFunction }
+function predicateFn(id, arr) {
+    const finalArray = []
+    for (let element of arr) {
+        if (element.id === id) {
+            element.isOn = true;
+            finalArray.push(element);
+        } else {
+            finalArray.push(element);
+        }
+    }
+    return finalArray;
+}
+
+export { toggleFunction, predicateFn }
