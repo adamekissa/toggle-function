@@ -1,6 +1,6 @@
 import { toggleFunction, predicateFn } from "./toggleFunction";
 
-test("Test returns empty array when passed empty string", () => {
+test("Toggle element with the specified ID's 'isOn' key to true and return a new array with the matutated abjects", () => {
     const id = 2;
     const vehicles = [{ id: 1, name: "Audi", type: "Car", isOn: false },
     { id: 2, name: "Nissan", type: "Car", isOn: false },
