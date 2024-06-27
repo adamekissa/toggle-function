@@ -1,6 +1,7 @@
 
 function toggleFunction(sortID, callBackFn, inputArray) {
-    const cookedArray = callBackFn(sortID, inputArray);
+    const newArray = [...inputArray]
+    const cookedArray = callBackFn(sortID, newArray);
     return cookedArray;
 }
 
